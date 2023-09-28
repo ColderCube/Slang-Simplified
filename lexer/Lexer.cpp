@@ -22,6 +22,7 @@ void Lexer::create_reserved() {
 	reserved["while"] = new Token(WHILE, "while");
 	reserved["do"] = new Token(DO, "do");
 	reserved["break"] = new Token(BREAK, "break");
+	reserved["fn"] = new Token(FN, "fn");
 }
 
 void Lexer::readch() {
@@ -238,6 +239,10 @@ Token* Lexer::scan() {
 		readch();
 		return new Token(COMA, ",");
 	}
+	if (peek == ':') {
+			readch();
+			return new Token(COLON, ":");
+		}
 	std::cerr << "Found Unknown at " << line_number << ":" << char_number
 			<< std::endl;
 	return new Token(UNIDENTIFIED);

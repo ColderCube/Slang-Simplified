@@ -4,6 +4,7 @@ This is the productions im thinking
 program : statements EOF;
 
 statements : statement statements
+           | bool_statement statements
            | ;
 
 statement : block_statement
@@ -12,9 +13,12 @@ statement : block_statement
           | if_statement
           | variable_decl_statement
           | variable_assignment_statement
+          | func_declaration_statement
           | func_def_statement
           | prototype_def_statement
           | func_call_statement;
+
+bool_statement : bool SEMICOLON;
 
 block_statement : LCBRAC statements RCBRAC;
 
@@ -30,9 +34,9 @@ decl : id (ASSIGN bool)? (COMMA decl)?;
 
 variable_assignment_statement : id ASSIGN bool SEMICOLON;
 
-func_def_statement : FUNC DATATYPE id LPARAN params? RPARAN block_statement;
+func_declaration_statement : FN id LPARAN args RPARAN COLON return_type SEMICOLON;
 
-prototype_def_statement : FUNC DATATYPE id LPARAN params? RPARAN SEMICOLON;
+func_def_statement : FN id LPARAN params RPARAN COLON return_type block_statement;
 
 func_call_statement : id LPARAN args? RPARAN SEMICOLON;
 
@@ -78,4 +82,5 @@ factor : LPARAN bool RPARAN
        | CHAR
        | STRING
        | id;
+
 

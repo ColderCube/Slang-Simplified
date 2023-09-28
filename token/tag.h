@@ -12,6 +12,7 @@
 typedef enum {
 	EOF_,
 	SEMI,
+	COLON,
 	AND,
 	BASIC,
 	BREAK,
@@ -52,6 +53,7 @@ typedef enum {
 	TEMP,
 	TRUE,
 	WHILE,
+	FN,
 	UNIDENTIFIED=99999999
 } Tag;
 

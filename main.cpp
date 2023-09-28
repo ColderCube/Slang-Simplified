@@ -15,6 +15,8 @@ int main() {
 	Lexer l(f);
 	Token * t = l.scan();
 	while (t->tag!=EOF_ && t->tag!=UNIDENTIFIED) {
+		t->Print();
+		std::cout << std::endl;
 		t = l.scan();
 	}
 	std::cout << "End" << std::endl;

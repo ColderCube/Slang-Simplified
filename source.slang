@@ -1,32 +1,37 @@
-{
-int a=10;
-a=a+1;
+int x; // Variable declaration statement
+
+fn add(int a, int b) : int { // Function definition statement
+    return a + b;
 }
-{
-int bcc,cass,asdd;
+
+fn multiply(int a, int b) : int; // Function declaration statement
+
+fn multiply(int a, int b) : int { // Function definition statement
+    return a * b;
 }
-int a=10;
-float b,c,d;
-char ch = 'a';
-// char str[] = "asdvdfsg";
-{a=a+10;}
-bool flag=true;
-if (!((flag!=false) && (a<10))) {
-	//do something
-	a=a+1;
-	ch='b';
-	c=9.9;
-	a=a+a;
+
+int num1 = 10;
+int num2 = 5;
+
+if (num1 > num2) { // If statement
+    int result = add(num1, num2);
+    int product = multiply(num1, num2);
 } else {
-	//do something
-	ch='v';
+    int result = add(num2, num1);
+    int product = multiply(num2, num1);
 }
-b=0;
-//while (b<10) {
-//	b=b+1;
-//}
-//
-//do {
-//	a=a+1;
-//} while(a<12); 
+
+while (num1 > 0) { // While statement
+    num1 = num1 - 1;
+}
+
+do { // Do-while statement
+    num2 = num2 - 1;
+} while (num2 > 0);
+
+bool flag = true && (false || true); // Boolean statement
+
+char grade = 'A';
+
+string message = "Hello, World!";
 
