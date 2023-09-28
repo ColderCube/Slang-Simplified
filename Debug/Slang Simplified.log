@@ -1,0 +1,12 @@
+﻿  ProgramAst.cpp
+  Lexer.cpp
+E:\creating new lang\Slang-Simplified\token\Token.h(26,41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\creating new lang\Slang-Simplified\lexer\Lexer.cpp(199,11): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+E:\creating new lang\Slang-Simplified\token\Token.h(26,41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Parser.cpp
+E:\creating new lang\Slang-Simplified\token\Token.h(26,41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  Generating Code...
+  ProgramAst.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  Slang Simplified.vcxproj -> E:\creating new lang\Slang-Simplified\Debug\Slang Simplified.exe

@@ -1,0 +1,2 @@
+E:\creating new lang\Slang-Simplified\Debug\Slang Simplified.vcxproj.AssemblyReference.cache
+E:\creating new lang\Slang-Simplified\Debug\Slang Simplified.exe

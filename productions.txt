@@ -1,0 +1,81 @@
+This is the productions im thinking
+
+
+program : statements EOF;
+
+statements : statement statements
+           | ;
+
+statement : block_statement
+          | while_statement
+          | do_while_statement
+          | if_statement
+          | variable_decl_statement
+          | variable_assignment_statement
+          | func_def_statement
+          | prototype_def_statement
+          | func_call_statement;
+
+block_statement : LCBRAC statements RCBRAC;
+
+while_statement : WHILE LPARAN bool RPARAN statement;
+
+do_while_statement : DO statement WHILE LPARAN bool RPARAN SEMICOLON;
+
+if_statement : IF LPARAN bool RPARAN statement (ELSE statement)?;
+
+variable_decl_statement : DATATYPE decl SEMICOLON;
+
+decl : id (ASSIGN bool)? (COMMA decl)?;
+
+variable_assignment_statement : id ASSIGN bool SEMICOLON;
+
+func_def_statement : FUNC DATATYPE id LPARAN params? RPARAN block_statement;
+
+prototype_def_statement : FUNC DATATYPE id LPARAN params? RPARAN SEMICOLON;
+
+func_call_statement : id LPARAN args? RPARAN SEMICOLON;
+
+params : param (COMMA param)*;
+
+param : DATATYPE id;
+
+args : bool (COMMA bool)*;
+
+bool : join
+     | join OR bool;
+
+join : equality
+     | equality AND join;
+
+equality : rel
+         | rel EQ equality
+         | rel NE equality;
+
+rel : expression
+    | expression EQ rel
+    | expression NE rel
+    | expression LT rel
+    | expression LE rel
+    | expression GT rel
+    | expression GE rel;
+
+expression : term
+           | term PLUS expression
+           | term MINUS expression;
+
+term : unary
+     | unary MULTIPLY term
+     | unary DIVIDE term;
+
+unary : UMINUS unary
+      | UPLUS unary
+      | factor;
+
+factor : LPARAN bool RPARAN
+       | NUM
+       | REAL
+       | CHAR
+       | STRING
+       | id;
+
